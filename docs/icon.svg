@@ -1,0 +1,195 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <!-- Deep space background gradient -->
+    <radialGradient id="bg" cx="50%" cy="50%" r="55%">
+      <stop offset="0%" stop-color="#0c0e24"/>
+      <stop offset="60%" stop-color="#060818"/>
+      <stop offset="100%" stop-color="#020308"/>
+    </radialGradient>
+
+    <!-- Nebula glow - cyan cluster -->
+    <radialGradient id="nebula1" cx="38%" cy="42%" r="28%">
+      <stop offset="0%" stop-color="#4fc3f7" stop-opacity="0.18"/>
+      <stop offset="50%" stop-color="#4fc3f7" stop-opacity="0.06"/>
+      <stop offset="100%" stop-color="#4fc3f7" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Nebula glow - violet cluster -->
+    <radialGradient id="nebula2" cx="65%" cy="55%" r="25%">
+      <stop offset="0%" stop-color="#ba68c8" stop-opacity="0.15"/>
+      <stop offset="50%" stop-color="#ba68c8" stop-opacity="0.05"/>
+      <stop offset="100%" stop-color="#ba68c8" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Nebula glow - amber cluster -->
+    <radialGradient id="nebula3" cx="52%" cy="30%" r="20%">
+      <stop offset="0%" stop-color="#ffb74d" stop-opacity="0.12"/>
+      <stop offset="50%" stop-color="#ffb74d" stop-opacity="0.04"/>
+      <stop offset="100%" stop-color="#ffb74d" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Star glow filter -->
+    <filter id="starGlow" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Bright star glow -->
+    <filter id="brightGlow" x="-200%" y="-200%" width="500%" height="500%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="6" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Link glow -->
+    <filter id="linkGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="1.5"/>
+    </filter>
+
+    <!-- Overall bloom -->
+    <filter id="bloom" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="8" result="bigBlur"/>
+      <feComposite in="SourceGraphic" in2="bigBlur" operator="over"/>
+    </filter>
+  </defs>
+
+  <!-- Rounded rectangle background -->
+  <rect width="512" height="512" rx="80" ry="80" fill="url(#bg)"/>
+
+  <!-- Subtle outer ring -->
+  <circle cx="256" cy="256" r="220" fill="none" stroke="#1a2040" stroke-width="0.5" opacity="0.4"/>
+
+  <!-- Nebula clouds -->
+  <circle cx="194" cy="215" r="144" fill="url(#nebula1)"/>
+  <circle cx="333" cy="282" r="128" fill="url(#nebula2)"/>
+  <circle cx="266" cy="154" r="102" fill="url(#nebula3)"/>
+
+  <!-- Galaxy disc - faint spiral suggestion -->
+  <ellipse cx="256" cy="260" rx="180" ry="60" fill="none" stroke="#4fc3f7" stroke-width="0.4" opacity="0.08" transform="rotate(-15 256 260)"/>
+  <ellipse cx="256" cy="260" rx="140" ry="45" fill="none" stroke="#ba68c8" stroke-width="0.3" opacity="0.06" transform="rotate(-15 256 260)"/>
+
+  <!-- ====== CONSTELLATION LINKS ====== -->
+  <g filter="url(#linkGlow)" opacity="0.5">
+    <!-- Cyan cluster links -->
+    <line x1="168" y1="198" x2="210" y2="170" stroke="#4fc3f7" stroke-width="1"/>
+    <line x1="210" y1="170" x2="190" y2="240" stroke="#4fc3f7" stroke-width="0.8"/>
+    <line x1="168" y1="198" x2="190" y2="240" stroke="#4fc3f7" stroke-width="0.8"/>
+    <line x1="168" y1="198" x2="138" y2="252" stroke="#4fc3f7" stroke-width="0.7"/>
+    <line x1="190" y1="240" x2="138" y2="252" stroke="#4fc3f7" stroke-width="0.6"/>
+    <line x1="210" y1="170" x2="248" y2="148" stroke="#4fc3f7" stroke-width="0.6" opacity="0.7"/>
+
+    <!-- Violet cluster links -->
+    <line x1="320" y1="265" x2="355" y2="290" stroke="#ba68c8" stroke-width="1"/>
+    <line x1="355" y1="290" x2="330" y2="330" stroke="#ba68c8" stroke-width="0.8"/>
+    <line x1="320" y1="265" x2="330" y2="330" stroke="#ba68c8" stroke-width="0.7"/>
+    <line x1="320" y1="265" x2="370" y2="248" stroke="#ba68c8" stroke-width="0.7"/>
+    <line x1="355" y1="290" x2="388" y2="310" stroke="#ba68c8" stroke-width="0.6"/>
+
+    <!-- Amber cluster links -->
+    <line x1="248" y1="148" x2="285" y2="130" stroke="#ffb74d" stroke-width="0.9"/>
+    <line x1="285" y1="130" x2="300" y2="168" stroke="#ffb74d" stroke-width="0.7"/>
+    <line x1="248" y1="148" x2="300" y2="168" stroke="#ffb74d" stroke-width="0.6"/>
+
+    <!-- Cross-cluster bridges -->
+    <line x1="190" y1="240" x2="260" y2="290" stroke="#6a8aaa" stroke-width="0.5" opacity="0.4"/>
+    <line x1="300" y1="168" x2="320" y2="265" stroke="#9a7aaa" stroke-width="0.5" opacity="0.4"/>
+    <line x1="260" y1="290" x2="320" y2="265" stroke="#8a7aba" stroke-width="0.5" opacity="0.4"/>
+
+    <!-- Extra bridge -->
+    <line x1="138" y1="252" x2="260" y2="290" stroke="#5a7a9a" stroke-width="0.4" opacity="0.3"/>
+  </g>
+
+  <!-- ====== STARS ====== -->
+
+  <!-- Background dust (tiny dim stars) -->
+  <g opacity="0.3">
+    <circle cx="100" cy="140" r="0.8" fill="#8899bb"/>
+    <circle cx="410" cy="170" r="0.7" fill="#8899bb"/>
+    <circle cx="130" cy="360" r="0.9" fill="#8899bb"/>
+    <circle cx="380" cy="380" r="0.6" fill="#8899bb"/>
+    <circle cx="88" cy="290" r="0.7" fill="#8899bb"/>
+    <circle cx="420" cy="220" r="0.8" fill="#8899bb"/>
+    <circle cx="200" cy="380" r="0.6" fill="#8899bb"/>
+    <circle cx="340" cy="140" r="0.7" fill="#8899bb"/>
+    <circle cx="440" cy="340" r="0.5" fill="#8899bb"/>
+    <circle cx="75" cy="200" r="0.6" fill="#8899bb"/>
+    <circle cx="300" cy="390" r="0.7" fill="#8899bb"/>
+    <circle cx="160" cy="120" r="0.5" fill="#8899bb"/>
+    <circle cx="400" cy="140" r="0.6" fill="#8899bb"/>
+    <circle cx="110" cy="320" r="0.5" fill="#8899bb"/>
+    <circle cx="450" cy="270" r="0.5" fill="#8899bb"/>
+  </g>
+
+  <!-- Cyan cluster stars -->
+  <g filter="url(#starGlow)">
+    <!-- Main star (hub node) -->
+    <circle cx="168" cy="198" r="5" fill="#fff" opacity="0.95"/>
+    <circle cx="168" cy="198" r="8" fill="#4fc3f7" opacity="0.3"/>
+
+    <circle cx="210" cy="170" r="4" fill="#fff" opacity="0.9"/>
+    <circle cx="210" cy="170" r="6.5" fill="#4fc3f7" opacity="0.25"/>
+
+    <circle cx="190" cy="240" r="3.5" fill="#fff" opacity="0.9"/>
+    <circle cx="190" cy="240" r="6" fill="#4fc3f7" opacity="0.22"/>
+
+    <circle cx="138" cy="252" r="2.5" fill="#fff" opacity="0.85"/>
+    <circle cx="138" cy="252" r="4.5" fill="#4fc3f7" opacity="0.2"/>
+  </g>
+
+  <!-- Violet cluster stars -->
+  <g filter="url(#starGlow)">
+    <circle cx="320" cy="265" r="4.5" fill="#fff" opacity="0.95"/>
+    <circle cx="320" cy="265" r="7.5" fill="#ba68c8" opacity="0.3"/>
+
+    <circle cx="355" cy="290" r="3.5" fill="#fff" opacity="0.9"/>
+    <circle cx="355" cy="290" r="6" fill="#ba68c8" opacity="0.25"/>
+
+    <circle cx="330" cy="330" r="3" fill="#fff" opacity="0.85"/>
+    <circle cx="330" cy="330" r="5" fill="#ba68c8" opacity="0.2"/>
+
+    <circle cx="370" cy="248" r="2.5" fill="#fff" opacity="0.85"/>
+    <circle cx="370" cy="248" r="4.5" fill="#ba68c8" opacity="0.2"/>
+
+    <circle cx="388" cy="310" r="2" fill="#fff" opacity="0.8"/>
+    <circle cx="388" cy="310" r="3.5" fill="#ba68c8" opacity="0.18"/>
+  </g>
+
+  <!-- Amber cluster stars -->
+  <g filter="url(#starGlow)">
+    <circle cx="248" cy="148" r="4" fill="#fff" opacity="0.92"/>
+    <circle cx="248" cy="148" r="7" fill="#ffb74d" opacity="0.28"/>
+
+    <circle cx="285" cy="130" r="3.5" fill="#fff" opacity="0.9"/>
+    <circle cx="285" cy="130" r="6" fill="#ffb74d" opacity="0.25"/>
+
+    <circle cx="300" cy="168" r="3" fill="#fff" opacity="0.85"/>
+    <circle cx="300" cy="168" r="5" fill="#ffb74d" opacity="0.2"/>
+  </g>
+
+  <!-- Central bridge node (between clusters) -->
+  <g filter="url(#brightGlow)">
+    <circle cx="260" cy="290" r="3" fill="#fff" opacity="0.85"/>
+    <circle cx="260" cy="290" r="5.5" fill="#7986cb" opacity="0.22"/>
+  </g>
+
+  <!-- Hero star - the brightest star, center of attention -->
+  <g filter="url(#brightGlow)">
+    <circle cx="256" cy="210" r="6.5" fill="#fff"/>
+    <circle cx="256" cy="210" r="11" fill="#4fc3f7" opacity="0.35"/>
+    <circle cx="256" cy="210" r="18" fill="#4fc3f7" opacity="0.08"/>
+  </g>
+
+  <!-- Lens flare rays on hero star -->
+  <g opacity="0.15">
+    <line x1="238" y1="210" x2="274" y2="210" stroke="#fff" stroke-width="0.8"/>
+    <line x1="256" y1="192" x2="256" y2="228" stroke="#fff" stroke-width="0.8"/>
+    <line x1="244" y1="198" x2="268" y2="222" stroke="#fff" stroke-width="0.4"/>
+    <line x1="268" y1="198" x2="244" y2="222" stroke="#fff" stroke-width="0.4"/>
+  </g>
+</svg>

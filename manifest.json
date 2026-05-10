@@ -1,0 +1,9 @@
+{
+  "id": "galaxy-graph",
+  "name": "Galaxy Graph",
+  "version": "0.1.0",
+  "minAppVersion": "1.4.0",
+  "description": "Visualize your vault as an interactive 3D galaxy — notes are stars, links are constellations.",
+  "author": "You",
+  "isDesktopOnly": false
+}

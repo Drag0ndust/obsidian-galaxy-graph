@@ -1,0 +1,23 @@
+{
+  "name": "obsidian-galaxy-graph",
+  "version": "0.1.0",
+  "description": "Interactive galaxy visualization of your Obsidian vault graph",
+  "main": "main.js",
+  "scripts": {
+    "dev": "node esbuild.config.mjs",
+    "build": "tsc -noEmit -skipLibCheck && node esbuild.config.mjs production"
+  },
+  "keywords": ["obsidian", "graph", "galaxy", "visualization", "three.js"],
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "builtin-modules": "^3.3.0",
+    "esbuild": "^0.20.0",
+    "obsidian": "latest",
+    "typescript": "^5.3.0"
+  },
+  "dependencies": {
+    "three": "^0.162.0",
+    "@types/three": "^0.162.0"
+  }
+}
